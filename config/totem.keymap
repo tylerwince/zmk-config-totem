@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-tri-state";
             label = "WINSWAPPER";
             #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
         };
         app_swap: app_swapper {
             compatible = "zmk,behavior-tri-state";
