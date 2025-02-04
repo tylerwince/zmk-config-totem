@@ -60,12 +60,6 @@
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
     };
-    // Define the hyper behavior within `totem.keymap`
-    hyper {
-        compatible = "zmk,behavior-mod-morph";
-        label = "HYPER";
-        bindings = <(MOD_LCTL | MOD_LSFT | MOD_LALT | MOD_LGUI)>;
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -142,7 +136,7 @@ label= "SYM"                               ;
                 &kp ESC     &kp RBKT    &kp RBRC    &kp RPAR    &trans          &trans      &trans      &trans      &trans      &kp EQUAL
                 &trans      &kp LBKT    &kp LBRC    &kp LPAR    &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp MINUS
     &trans      &trans      &trans      &trans      &trans      &trans          &kp BSLH    &trans      &trans      &trans      &trans      &trans
-                                        &trans      &mo ADJ     &trans          &hyper A    &trans      &trans
+                                        &trans      &mo ADJ     &trans          &kp LS(LC(LG(LA(A))))   &trans      &trans
                         >;
                 };
 
