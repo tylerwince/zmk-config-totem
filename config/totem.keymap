@@ -20,6 +20,8 @@
 #define NAV  1
 #define SYM  2
 #define ADJ  3
+// Define Hyper A as a combination of Hyper modifiers + A
+#define HYPR_A (MOD_LCTL | MOD_LSFT | MOD_LALT | MOD_LGUI | KC_A)
 
 &mt {
   quick-tap-ms = <100>;
@@ -58,9 +60,15 @@
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
     };
+    // Define the hyper behavior within `totem.keymap`
+    hyper {
+        compatible = "zmk,behavior-mod-morph";
+        label = "HYPER";
+        bindings = <(MOD_LCTL | MOD_LSFT | MOD_LALT | MOD_LGUI)>;
+    };
 
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
                 base_layer {
@@ -74,7 +82,7 @@ label= "BASE"                              ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃     '     ┃     ;     ┃     Q     ┃     J     ┃     K     ┃     X     ┃   ┃     B     ┃     M     ┃     W     ┃     V     ┃     Z     ┃     L     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    DEL    ┃    NAV    ┃    BSPC   ┃   ┃   SPACE   ┃    SYM    ┃   BSPC    ┃
+//                                     ┃  WINSWAP  ┃    NAV    ┃    BSPC   ┃   ┃   SPACE   ┃    SYM    ┃  APPSWAP  ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷              ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -126,7 +134,7 @@ label= "SYM"                               ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃     \     ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃    ADJ    ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┃           ┃    ADJ    ┃           ┃   ┃  HYPER A  ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -134,7 +142,7 @@ label= "SYM"                               ;
                 &kp ESC     &kp RBKT    &kp RBRC    &kp RPAR    &trans          &trans      &trans      &trans      &trans      &kp EQUAL
                 &trans      &kp LBKT    &kp LBRC    &kp LPAR    &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp MINUS
     &trans      &trans      &trans      &trans      &trans      &trans          &kp BSLH    &trans      &trans      &trans      &trans      &trans
-                                        &trans      &mo ADJ     &trans          &trans      &kp C_PP    &trans
+                                        &trans      &mo ADJ     &trans          &hyper A    &trans      &trans
                         >;
                 };
 
