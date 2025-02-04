@@ -44,6 +44,20 @@
             then-layer = <3>;
         };
     };
+    behaviors {
+        win_swap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "WINSWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+        };
+        app_swap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "APPSWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+        };
+    };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -68,7 +82,7 @@ label= "BASE"                              ;
                 &kp SQT        &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
                 &kp A          &kp O       &kp E       &kp U       &kp I           &kp D       &kp H       &kp T       &kp N       &kp S
     &kp SQT     &mt LSHFT SEMI &mt LCTRL Q &mt LALT J  &mt LGUI K  &kp X           &kp B       &mt RGUI M  &mt RALT W  &mt RCTRL V &mt RSHFT Z &kp L
-                                           &kp DEL     &mo NAV     &kp BSPC        &kp SPACE   &mo SYM     &kp BSPC
+                                           &win_swap   &mo NAV     &kp BSPC        &kp SPACE   &mo SYM     &app_swap
                         >;
                 };
 
