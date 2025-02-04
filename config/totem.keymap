@@ -45,13 +45,13 @@
         };
     };
     behaviors {
-        win_swap: swapper {
+        win_swap: win_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "WINSWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
         };
-        app_swap: swapper {
+        app_swap: app_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "APPSWAPPER";
             #binding-cells = <0>;
