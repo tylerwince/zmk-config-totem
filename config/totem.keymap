@@ -25,7 +25,7 @@
   quick-tap-ms = <100>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <170>;
+  tapping-term-ms = <150>;
 };
 
 / {
@@ -53,12 +53,14 @@
         win_swap: win_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "WINSWAPPER";
+            timeout-ms = <150>;
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
         };
         app_swap: app_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "APPSWAPPER";
+            timeout-ms = <150>;
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
