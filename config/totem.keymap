@@ -53,14 +53,14 @@
         win_swap: win_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "WINSWAPPER";
-            timeout-ms = <150>;
+            timeout-ms = <500>;
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
         };
         app_swap: app_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "APPSWAPPER";
-            timeout-ms = <150>;
+            timeout-ms = <500>;
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
