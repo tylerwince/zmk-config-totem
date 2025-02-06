@@ -53,16 +53,20 @@
         win_swap: win_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "WINSWAPPER";
-            timeout-ms = <500>;
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
         };
         app_swap: app_swapper {
             compatible = "zmk,behavior-tri-state";
             label = "APPSWAPPER";
-            timeout-ms = <500>;
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+        };
+        bspc_word: backspace_word {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp BSPC>, <&kp LA(BSPC)>;
         };
     };
 
@@ -97,7 +101,7 @@ label= "BASE"                              ;
 
                 &kp SQT        &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
                 &kp A          &kp O       &kp E       &kp U       &kp I           &kp D       &kp H       &kp T       &kp N       &kp S
-    &kp SQT     &mt LSHFT SEMI &mt LCTRL Q &mt LALT J  &mt LGUI K  &kp X           &kp B       &mt RGUI M  &mt RALT W  &mt RCTRL V &mt RSHFT Z &kp ENTER
+   &kp LA(BSPC) &mt LSHFT SEMI &mt LCTRL Q &mt LALT J  &mt LGUI K  &kp X           &kp B       &mt RGUI M  &mt RALT W  &mt RCTRL V &mt RSHFT Z &kp ENTER
                                            &win_swap   &mo NAV     &kp BSPC        &kp SPACE   &mo SYM     &app_swap
                         >;
                 };
@@ -175,7 +179,7 @@ label= "ADJ"                               ;
 
                 &sys_reset  &bt BT_CLR &out OUT_TOG &trans      &trans          &trans      &kp F7 &kp LS(LC(LG(LA(C)))) &kp F9      &kp F12
                 &bootloader &bt BT_NXT  &trans      &trans      &trans          &trans      &kp F4      &kp F5      &kp F6      &kp F11  
-    &kp A       &trans      &bt BT_PRV  &trans      &trans      &trans          &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans         
+    &trans      &trans      &bt BT_PRV  &trans      &trans      &trans          &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans         
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
