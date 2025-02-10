@@ -28,10 +28,6 @@
   tapping-term-ms = <150>;
 };
 
-&caps_word {
-   continue-list = <UNDERSCORE MINUS BACKSPACE>;
-};
-
 / {
      combos {
             compatible = "zmk,combos";
@@ -96,7 +92,7 @@ label= "BASE"                              ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃     A     ┃     O     ┃     E     ┃     U     ┃     I     ┃   ┃     D     ┃     H     ┃     T     ┃     N     ┃     S     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃     '     ┃     ;     ┃     Q     ┃     J     ┃     K     ┃     X     ┃   ┃     B     ┃     M     ┃     W     ┃     V     ┃     Z     ┃   ENTER   ┃
+// ┃  HYPER S  ┃     ;     ┃     Q     ┃     J     ┃     K     ┃     X     ┃   ┃     B     ┃     M     ┃     W     ┃     V     ┃     Z     ┃   ENTER   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃  WINSWAP  ┃    NAV    ┃    BSPC   ┃   ┃   SPACE   ┃    SYM    ┃  APPSWAP  ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -105,7 +101,7 @@ label= "BASE"                              ;
 
                 &kp SQT        &kp COMMA   &kp DOT     &kp P       &kp Y           &kp F       &kp G       &kp C       &kp R       &kp L
                 &kp A          &kp O       &kp E       &kp U       &kp I           &kp D       &kp H       &kp T       &kp N       &kp S
-   &kp LA(BSPC) &mt LSHFT SEMI &mt LCTRL Q &mt LALT J  &mt LGUI K  &kp X           &kp B       &mt RGUI M  &mt RALT W  &mt RCTRL V &mt RSHFT Z &kp ENTER
+ &kp LS(LC(LG(LA(S)))) &mt LSHFT SEMI &mt LCTRL Q &mt LALT J  &mt LGUI K  &kp X           &kp B       &mt RGUI M  &mt RALT W  &mt RCTRL V &mt RSHFT Z &kp ENTER
                                            &win_swap   &mo NAV     &kp BSPC        &kp SPACE   &mo SYM     &app_swap
                         >;
                 };
@@ -158,7 +154,7 @@ label= "SYM"                               ;
                 &kp ESC     &kp RBKT    &kp RBRC    &kp RPAR    &trans          &trans      &trans      &trans      &trans      &kp EQUAL
                 &trans      &kp LBKT    &kp LBRC    &kp LPAR    &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp MINUS
     &trans      &trans      &trans      &trans      &trans      &trans          &kp BSLH    &trans      &trans      &trans      &trans      &trans
-                                        &trans      &mo ADJ     &trans          &kp LS(LC(LG(LA(A))))   &trans      &trans
+                                        &trans      &mo NAV     &trans          &kp LS(LC(LG(LA(A))))   &trans      &trans
                         >;
                 };
 
