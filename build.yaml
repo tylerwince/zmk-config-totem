@@ -1,6 +1,20 @@
 include:
+  # -----------------------------------------
+  # TOTEM Dongle (Central)
+  # -----------------------------------------
+  # Change the board appropriately, you can use any board
+  - board: seeeduino_xiao_ble
+    shield: totem_dongle
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+  # -----------------------------------------
+  # TOTEM Peripherals (modified with cmake-args)
+  # -----------------------------------------
+  # Add these cmake-args to the peripherals you wish to use with the dongle
   - board: seeeduino_xiao_ble
     shield: totem_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
     shield: totem_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 # there is no settingsreset (needed) for the XIAO
