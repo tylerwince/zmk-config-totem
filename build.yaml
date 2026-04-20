@@ -3,20 +3,19 @@ include:
   # TOTEM Dongle (Central)
   # -----------------------------------------
   # Change the board appropriately, you can use any board
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_dongle prospector_adapter
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
   # -----------------------------------------
   # TOTEM Peripherals (modified with cmake-args)
   # -----------------------------------------
   # Add these cmake-args to the peripherals you wish to use with the dongle
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 # there is no settingsreset (needed) for the XIAO
     #
-
