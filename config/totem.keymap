@@ -157,7 +157,7 @@ display-name = "SYMBOL"                               ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃     \     ┃           ┃           ┃           ┃           ┃ CAPSLOCK  ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃    ADJ    ┃           ┃   ┃  HYPER A  ┃           ┃           ┃
+//                                     ┃           ┃    ADJ    ┃           ┃   ┃    F15    ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -165,7 +165,7 @@ display-name = "SYMBOL"                               ;
                 &kp ESC     &kp RBKT    &kp RBRC    &kp RPAR    &trans          &trans      &trans      &trans      &trans      &kp EQUAL
                 &trans      &kp LBKT    &kp LBRC    &kp LPAR    &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp MINUS
     &trans      &trans      &trans      &trans      &trans      &trans          &kp BSLH    &trans      &trans      &trans      &trans      &kp CAPSLOCK
-                                        &trans      &mo NAV     &trans          &kp LS(LC(LG(LA(A))))   &trans      &trans
+                                        &trans      &mo NAV     &trans          &kp F15     &trans      &trans
                         >;
                 };
 
